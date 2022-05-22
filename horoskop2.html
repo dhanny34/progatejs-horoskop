@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Belajar Meramal Nasib</title>
+    </head>
+    <body>
+        <h1>Program Ramal nasib</h1>
+
+        <button type="button">Mau tau hasil promosinya?</button>
+
+        <div id="hasil-ramal">
+            <!-- hasil cetak disini -->
+        </div>
+
+
+        <script>
+            const tombol = document.querySelector('button');
+
+            // kalo tombol di klik, maka akan menjalankan fungsi
+            tombol.addEventListener('click', function() {
+                const hasilnya = document.createElement("p");
+                const divhasilramal = document.getElementById("hasil-ramal");
+
+                // acak array
+                const array = [1,1,1,1,1,1,2,2,2,3]
+                const hasilacak = array[Math.floor(Math.random() * array.length)];
+                // console.log(hasilacak);
+
+                switch (hasilacak) {
+                    case 1:
+                        hasilnya.innerHTML = 'Sabar ya, kita coba periode berikutnya';
+                        break;
+                    case 2:
+                        hasilnya.innerHTML = 'Tetap semangat walaupun yang promosi orang lain';
+                        break;
+                    default:
+                        hasilnya.innerHTML = 'Banyak nanya promosi aja lu, gw mutasi juga nih';
+                        break;
+                }
+                
+                // hasilnya ditambahkan ke div hasil-ramal
+                divhasilramal.append(hasilnya);
+
+            });
+        </script>
+    </body>
+</html>
